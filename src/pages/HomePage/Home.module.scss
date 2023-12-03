@@ -1,6 +1,14 @@
-@import "../../index.scss";
-
 .testStyle {
   color: var(--color);
   background-color: var(--background-color);
+}
+
+.baseComponent {
+  display: flex;
+  padding: 10px;
+  margin: 0 10px;
+  width: 95%;
+  max-width: 1200px;
+  background-color: var(--element-background-color);
+  border-radius: 10px;
 }

@@ -10,6 +10,7 @@
 
 :root[data-theme="light"] {
   --background-color: #f2f2f3;
+  --header-background-color: #ffffff;
   --element-background-color: #ffffff;
   --color: black;
   --button-hover-background-color: #e7e7e7;
@@ -18,7 +19,8 @@
 
 :root[data-theme="dark"] {
   --background-color: #0a0a0a;
-  --element-background-color: #252525;
+  --header-background-color: #252527;
+  --element-background-color: #1c1c1e;
   --color: #bfbfbf;
   --button-hover-background-color: #313131;
   --sub-text-color: rgb(150, 150, 150);
@@ -48,6 +50,9 @@ h1 {
 }
 
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   color: var(--color);
   background-color: #0a0a0a00;
@@ -56,6 +61,14 @@ button {
   text-align: center;
   transition: 0.3s;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+button svg {
+  margin-right: 7px;
 }
 
 button:hover {

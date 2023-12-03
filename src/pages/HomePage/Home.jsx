@@ -16,19 +16,9 @@ function Home() {
   return (
     <>
       <BaseComponent>
-        <SwiperMangaComponent dataManga={dataManga} />
-      </BaseComponent>
-      <BaseComponent>
-        <SwiperMangaComponent dataManga={dataManga} />
-      </BaseComponent>
-      <BaseComponent>
-        <SwiperMangaComponent dataManga={dataManga} />
-      </BaseComponent>
-      <BaseComponent>
-        <SwiperMangaComponent dataManga={dataManga} />
-      </BaseComponent>
-      <BaseComponent>
-        <SwiperMangaComponent dataManga={dataManga} />
+        <div className={styles.baseComponent}>
+          <SwiperMangaComponent dataManga={dataManga} />
+        </div>
       </BaseComponent>
     </>
   );
