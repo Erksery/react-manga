@@ -1,8 +1,16 @@
 .component {
   display: flex;
   align-items: flex-start;
-  justify-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 80px;
+}
+
+.baseComponent {
+  display: flex;
   padding: 10px;
   width: 100%;
-  background-color: #bea6a6;
+  max-width: 1200px;
+  background-color: var(--element-background-color);
+  border-radius: 10px;
 }

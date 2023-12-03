@@ -1,0 +1,25 @@
+.imageManga {
+  user-select: none;
+  object-fit: cover;
+  object-position: center;
+  width: calc(70px * 2);
+  height: calc(100px * 2);
+  border-radius: 10px;
+  transition: opacity 0.15s ease-in;
+}
+.titleManga {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  color: var(--color);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.formatManga {
+  margin: 0;
+  color: var(--sub-text-color);
+  font-size: 13px;
+}

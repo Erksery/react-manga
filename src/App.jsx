@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Home from "./pages/HomePage/Home";
 import { Route, Routes } from "react-router";
 import MangaPage from "./pages/MangaPage/MangaPage";
+import Header from "./components/Header/Header";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -17,13 +18,14 @@ function App() {
   };
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={<Home handleToggleTheme={handleToggleTheme} />}
-      />
-      <Route path="/manga" element={<MangaPage />} />
-    </Routes>
+    <>
+      <Header handleToggleTheme={handleToggleTheme} theme={theme} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/manga/:id" element={<MangaPage />} />
+        <Route path="/manga" element={<MangaPage />} />
+      </Routes>
+    </>
   );
 }
 
