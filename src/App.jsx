@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import Home from "./pages/HomePage/Home";
 import { Route, Routes } from "react-router";
 import MangaPage from "./pages/MangaPage/MangaPage";
@@ -7,7 +7,7 @@ import Header from "./components/Header/Header";
 function App() {
   const [theme, setTheme] = useState("light");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const saveTheme = localStorage.getItem("theme");
     document.documentElement.dataset.theme = theme;
     setTheme(saveTheme);

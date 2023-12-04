@@ -41,7 +41,7 @@ $headerElementHeight: 40px;
 }
 
 .searchButton:hover {
-  border-color: aqua;
+  border-color: var(--thematic-color);
   background-color: var(--element-background-color);
 }
 

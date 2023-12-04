@@ -3,9 +3,14 @@ import { useParams } from "react-router";
 import { useGetActiveManga } from "../../hooks/useGetActiveManga";
 import styles from "./MangaPage.module.scss";
 import BaseComponent from "../../components/BaseComponent/BaseComponent";
-import { Icon36Favorite } from "@vkontakte/icons";
+import {
+  Icon36Favorite,
+  Icon28BookSpreadOutline,
+  Icon28AddOutline,
+} from "@vkontakte/icons";
 import TabsMangaPage from "../../components/TabsMangaPage/TabsMangaPage";
 import Description from "../../components/Description/Description";
+import InfoMangaPage from "../../components/InfoMangaPage/InfoMangaPage";
 
 function MangaPage() {
   const { dataActiveManga, isLoadingActiveData } = useGetActiveManga();
@@ -22,19 +27,25 @@ function MangaPage() {
           <div className={styles.mangaContainer}>
             <div className={styles.sideContainer}>
               <div className={styles.coverContainer}>
-                <img
-                  className={styles.coverImage}
-                  src={`http://localhost:5001/image/${coverImageManga}`}
-                  alt="..."
-                />
+                {coverImageManga && (
+                  <img
+                    className={styles.coverImage}
+                    src={`http://localhost:5001/image/${coverImageManga}`}
+                    alt="..."
+                  />
+                )}
               </div>
               <div className={styles.buttonGroup}>
-                <button className={styles.buttonRead}>Начать читать</button>
+                <button className={styles.buttonRead}>
+                  <Icon28BookSpreadOutline width={25} />
+                  Начать читать
+                </button>
                 <button className={styles.buttonAddBookMarks}>
+                  <Icon28AddOutline width={25} />
                   Добавить в список
                 </button>
               </div>
-              <div className={styles.infoMangaContainer}>fdgf</div>
+              <InfoMangaPage {...dataActiveManga} />
             </div>
             <div className={styles.descriptionContainer}>
               <div className={styles.nameMangaContainer}>
@@ -51,8 +62,7 @@ function MangaPage() {
                 </div>
               </div>
               <div className={styles.mangaContent}>
-                <TabsMangaPage str={summaryManga}/>
-                
+                <TabsMangaPage str={summaryManga} />
               </div>
             </div>
           </div>

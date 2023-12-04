@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./TabsMangaPage.module.scss";
 import Description from "../Description/Description";
+import ChaptersMangaPage from "../ChaptersMangaPage/ChaptersMangaPage";
 
 function TabsMangaPage({ str }) {
   const [activeTab, setActiveTab] = useState(0);
@@ -9,7 +10,7 @@ function TabsMangaPage({ str }) {
     { title: "О тайтле", component: <Description str={str} /> },
     {
       title: "Главы",
-      component: <Description str={"adasdaasdasdasdasdasd"} />,
+      component: <ChaptersMangaPage />,
     },
     {
       title: "Комментарии",
@@ -22,6 +23,7 @@ function TabsMangaPage({ str }) {
       <div className={styles.tabsContainer}>
         {tabs.map((tab, index) => (
           <button
+            key={index}
             style={{ color: activeTab === index && "#4099ff" }}
             onClick={() => setActiveTab(index)}
           >
