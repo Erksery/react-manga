@@ -9,12 +9,14 @@ function App() {
 
   useEffect(() => {
     const saveTheme = localStorage.getItem("theme");
-    document.documentElement.dataset.theme = saveTheme;
+    document.documentElement.dataset.theme = theme;
+    setTheme(saveTheme);
   }, [theme]);
 
   const handleToggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-    localStorage.setItem("theme", theme);
+    const newT = theme === "light" ? "dark" : "light";
+    setTheme(newT);
+    localStorage.setItem("theme", newT);
   };
 
   return (

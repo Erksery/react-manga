@@ -1,0 +1,15 @@
+.tabsContainer {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.404);
+}
+
+.tabsContainer button {
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 0px;
+  transition: 0.3s;
+}
+.tabsContainer button:hover {
+  background-color: var(--element-background-color);
+}

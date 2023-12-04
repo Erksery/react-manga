@@ -1,11 +1,117 @@
 .mangaPage {
+  position: relative;
   display: flex;
-  padding: 10px;
-  margin: 0 10px;
+  flex-direction: column;
   width: 95%;
-  max-width: 1300px;
-
+  max-width: 1220px;
   border-radius: 10px;
   z-index: 10;
 }
 
+.mangaBanner {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+  background-color: var(--element-background-color);
+}
+
+.mangaContainer {
+  display: flex;
+  gap: 20px;
+  padding: 0 0 0 10px;
+  margin-top: -80px;
+}
+
+.sideContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttonRead {
+  color: #ffffff;
+  background-color: #0068df;
+}
+
+.buttonRead:hover {
+  background-color: var(--thematic-color);
+}
+
+.buttonAddBookMarks {
+  background-color: var(--element-background-color);
+}
+
+.coverContainer {
+  position: relative;
+  width: 70px * 3.7;
+  height: 100px * 3.7;
+}
+
+.coverImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.descriptionContainer {
+  flex: 1;
+}
+
+.nameMangaContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  flex: 2;
+  flex-direction: row;
+}
+
+.nameMangaContainer h2 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 600;
+  color: var(--color);
+}
+.nameMangaContainer h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--color);
+}
+
+.nameMangaContainer p {
+  color: var(--sub-text-color);
+}
+
+.nameContainer {
+  display: flex;
+}
+
+.infoMangaContainer {
+  background-color: var(--element-background-color);
+}
+
+.favoriteContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mangaContent {
+  padding: 10px;
+  margin-top: 20px;
+  flex: 1;
+  border-radius: 20px;
+  background-color: var(--element-background-color);
+}

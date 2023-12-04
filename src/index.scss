@@ -15,6 +15,7 @@
   --color: black;
   --button-hover-background-color: #e7e7e7;
   --sub-text-color: rgb(150, 150, 150);
+  --thematic-color: #004a9e;
 }
 
 :root[data-theme="dark"] {
@@ -24,6 +25,7 @@
   --color: #bfbfbf;
   --button-hover-background-color: #313131;
   --sub-text-color: rgb(150, 150, 150);
+  --thematic-color: #004a9e;
 }
 
 body {
@@ -31,7 +33,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--background-color);
-  transition: 0.3s;
   overflow-x: hidden;
 }
 
