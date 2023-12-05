@@ -18,7 +18,7 @@ export const useGetActiveManga = () => {
 
   useEffect(() => {
     getActiveManga();
-  }, []);
+  }, [id]);
 
   return { dataActiveManga, isLoadingActiveData };
 };

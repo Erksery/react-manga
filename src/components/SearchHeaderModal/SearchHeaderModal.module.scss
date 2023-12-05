@@ -32,33 +32,4 @@
   margin: 0;
 }
 
-.searchMangaList {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
 
-.searchMangaContainer {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: var(--element-background-color);
-}
-
-.searchMangaContainer img {
-  width: 70px * 0.8;
-  height: 100px * 0.7;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.searchMangaName {
-}
-
-.searchMangaName p {
-  margin: 0;
-  font-size: 14px;
-  font-weight: normal;
-}

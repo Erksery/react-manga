@@ -52,6 +52,14 @@ $headerElementHeight: 40px;
   gap: 10px;
 }
 
+.userOptionsContainer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .headerButton {
   height: $headerElementHeight;
 }

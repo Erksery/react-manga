@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import { useGetActiveManga } from "../../hooks/useGetActiveManga";
 import styles from "./MangaPage.module.scss";
@@ -9,7 +9,6 @@ import {
   Icon28AddOutline,
 } from "@vkontakte/icons";
 import TabsMangaPage from "../../components/TabsMangaPage/TabsMangaPage";
-import Description from "../../components/Description/Description";
 import InfoMangaPage from "../../components/InfoMangaPage/InfoMangaPage";
 
 function MangaPage() {
@@ -21,8 +20,13 @@ function MangaPage() {
     <>
       <BaseComponent>
         <div className={styles.mangaPage}>
-          <div className={styles.mangaBanner}>
-          </div>
+          <div
+            style={{
+              backgroundImage:
+                "url('https://cover.imglib.info/uploads/anime/20545/background/d77470a7-628f-470c-a18d-7df6ab52f844.jpg')",
+            }}
+            className={styles.mangaBanner}
+          />
           <div className={styles.mangaContainer}>
             <div className={styles.sideContainer}>
               <div className={styles.coverContainer}>

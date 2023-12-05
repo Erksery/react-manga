@@ -14,9 +14,10 @@
   --element-background-color: #ffffff;
   --color: black;
   --button-hover-background-color: #e7e7e7;
-  --sub-text-color: rgb(150, 150, 150);
+  --sub-text-color: rgb(212, 212, 212);
   --thematic-color: #004a9e;
-  --sub-element-background-color: #dfdfdf48;
+  --sub-element-background-color: #eeeeee48;
+  --name-color: #ffffff;
 }
 
 :root[data-theme="dark"] {
@@ -28,6 +29,9 @@
   --sub-text-color: rgb(150, 150, 150);
   --thematic-color: #004a9e;
   --sub-element-background-color: #33333367;
+  --name-color: #bfbfbf;
+  --font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -49,6 +53,10 @@ h1 {
   line-height: 1.1;
 }
 
+p {
+  margin: 0;
+}
+
 button {
   display: flex;
   justify-content: center;
@@ -63,8 +71,7 @@ button {
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-family);
 }
 
 button svg {
@@ -77,6 +84,8 @@ button:hover {
 
 input {
   border: none;
+  font-size: 14px;
+  font-family: var(--font-family);
 }
 
 input:focus {

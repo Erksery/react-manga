@@ -3,6 +3,8 @@ import Home from "./pages/HomePage/Home";
 import { Route, Routes } from "react-router";
 import MangaPage from "./pages/MangaPage/MangaPage";
 import Header from "./components/Header/Header";
+import AuthPage from "./pages/AuthPage/AuthPage";
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -26,6 +28,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/manga/:id" element={<MangaPage />} />
         <Route path="/manga" element={<MangaPage />} />
+        <Route path="/authorization" element={<AuthPage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
       </Routes>
     </>
   );

@@ -6,6 +6,7 @@ import Modal from "../Modal/Modal";
 import { Icon36Cancel } from "@vkontakte/icons";
 import { useGetManga } from "../../hooks/useGetManga";
 import { Link } from "react-router-dom";
+import SearchMangaList from "../SearchMangaList/SearchMangaList";
 
 function SearchHeaderModal({ activeSearchModal, setActiveSearchModal }) {
   const [searchValue, setSearchValue] = useState("");
@@ -37,27 +38,15 @@ function SearchHeaderModal({ activeSearchModal, setActiveSearchModal }) {
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Опять работать?"
               />
-              <button>
+              <button onClick={() => setSearchValue("")}>
                 <Icon36Cancel width={25}></Icon36Cancel>
               </button>
             </div>
-            <div className={styles.searchMangaList}>
-              {dataManga &&
-                dataManga.map((manga) => (
-                  <Link
-                    key={manga.idManga}
-                    className={styles.searchMangaContainer}
-                  >
-                    <img
-                      src={`http://localhost:5001/image/${manga.coverImageManga}`}
-                    />
-                    <div className={styles.searchMangaName}>
-                      <span>{manga.titleManga}</span>
-                      <p>{manga.titleEnglish}</p>
-                    </div>
-                  </Link>
-                ))}
-            </div>
+            <SearchMangaList
+              searchRequestValue={searchRequestValue}
+              dataManga={dataManga}
+              setActiveSearchModal={setActiveSearchModal}
+            />
           </div>
         )}
       </Transition>

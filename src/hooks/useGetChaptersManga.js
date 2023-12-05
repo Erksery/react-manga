@@ -18,7 +18,7 @@ export const useGetChaptersManga = () => {
 
   useEffect(() => {
     getChapters();
-  }, []);
+  }, [id]);
 
   return { chaptersData, isLoadingChaptersData };
 };

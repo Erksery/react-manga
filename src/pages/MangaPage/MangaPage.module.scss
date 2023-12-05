@@ -16,11 +16,11 @@
   background-color: var(--element-background-color);
   object-fit: fill;
   background-position: center;
-  background-image: url(https://cover.imglib.info/uploads/anime/20545/background/d77470a7-628f-470c-a18d-7df6ab52f844.jpg);
+  overflow: hidden;
   animation: fadeIn 0.3s ease;
 }
 
-.mangaBanner::before {
+:root[data-theme="dark"] .mangaBanner::before {
   content: "";
   display: block;
   position: absolute;
@@ -28,7 +28,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .mangaContainer {
@@ -104,13 +104,13 @@
   margin: 0;
   font-size: 27px;
   font-weight: 600;
-  color: var(--color);
+  color: var(--name-color);
 }
 .nameMangaContainer h3 {
   margin: 0;
   font-size: 18px;
   font-weight: normal;
-  color: var(--color);
+  color: var(--name-color);
 }
 
 .nameMangaContainer p {

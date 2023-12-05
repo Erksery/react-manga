@@ -8,16 +8,23 @@ import {
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import SearchHeaderModal from "../SearchHeaderModal/SearchHeaderModal";
+import UserButton from "../UserButton/UserButton";
+import { useCookies } from "react-cookie";
 
 function Header({ handleToggleTheme, theme }) {
   const [activeSearchModal, setActiveSearchModal] = useState(false);
+  const [cookies] = useCookies(["AuthData"]);
+
+  console.log(cookies.AuthData);
 
   return (
     <div className={styles.headerContainer}>
       <div className={styles.header}>
         <div className={styles.logoContainer}>
           <Link to={"/"}>
-            <h2>ReactManga</h2>
+            <h2>
+              React<span style={{ color: "#4099ff" }}>Manga</span>
+            </h2>
           </Link>
 
           <button
@@ -45,8 +52,11 @@ function Header({ handleToggleTheme, theme }) {
               <Icon28SunOutline width={25} />
             )}
           </button>
-
-          <button className={styles.authButton}>Войти</button>
+          {cookies.AuthData ? (
+            <UserButton data={cookies.AuthData} />
+          ) : (
+            <Link to={"/authorization"}>Войти</Link>
+          )}
         </div>
       </div>
     </div>
