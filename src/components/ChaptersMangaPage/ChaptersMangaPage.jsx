@@ -1,21 +1,22 @@
 import React from "react";
 import styles from "./ChaptersMangaPage.module.scss";
 import { useGetChaptersManga } from "../../hooks/useGetChaptersManga";
+import ChapterComponent from "./ChapterComponent";
 
 function ChaptersMangaPage() {
-  const { chaptersData } = useGetChaptersManga();
+  const { chaptersData, isLoadingChaptersData } = useGetChaptersManga();
 
-  if (chaptersData.length === 0) return <h2>Глав не завезли</h2>;
+  if (chaptersData.length === 0)
+    return (
+      <div className={styles.nullChapters}>
+        <p>Глав не завезли</p>
+      </div>
+    );
 
-  return (
-    <div>
-      {chaptersData.map((chapter) => (
-        <div>
-          <p>{chapter.numberChapter}</p>
-        </div>
-      ))}
-    </div>
-  );
+  if (isLoadingChaptersData) {
+    return <h3>Loading...</h3>;
+  }
+  return chaptersData.map((chapter) => <ChapterComponent {...chapter} />);
 }
 
 export default ChaptersMangaPage;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Icon28SunOutline,
   Icon28MoonOutline,
@@ -7,8 +7,11 @@ import {
 } from "@vkontakte/icons";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
+import SearchHeaderModal from "../SearchHeaderModal/SearchHeaderModal";
 
 function Header({ handleToggleTheme, theme }) {
+  const [activeSearchModal, setActiveSearchModal] = useState(false);
+
   return (
     <div className={styles.headerContainer}>
       <div className={styles.header}>
@@ -17,10 +20,17 @@ function Header({ handleToggleTheme, theme }) {
             <h2>ReactManga</h2>
           </Link>
 
-          <button className={styles.searchButton}>
+          <button
+            onClick={() => setActiveSearchModal(true)}
+            className={styles.searchButton}
+          >
             <Icon32SearchOutline width={25} />
             Поиск
           </button>
+          <SearchHeaderModal
+            activeSearchModal={activeSearchModal}
+            setActiveSearchModal={setActiveSearchModal}
+          />
         </div>
 
         <div className={styles.userOptionsContainer}>

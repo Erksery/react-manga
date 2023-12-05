@@ -22,7 +22,6 @@ function MangaPage() {
       <BaseComponent>
         <div className={styles.mangaPage}>
           <div className={styles.mangaBanner}>
-            <img />
           </div>
           <div className={styles.mangaContainer}>
             <div className={styles.sideContainer}>
