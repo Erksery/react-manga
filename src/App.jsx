@@ -5,6 +5,8 @@ import MangaPage from "./pages/MangaPage/MangaPage";
 import Header from "./components/Header/Header";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
+import UserPage from "./pages/UserPage/UserPage";
+import ChapterPage from "./pages/ChapterPage/ChapterPage";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -30,6 +32,8 @@ function App() {
         <Route path="/manga" element={<MangaPage />} />
         <Route path="/authorization" element={<AuthPage />} />
         <Route path="/registration" element={<RegistrationPage />} />
+        <Route path="/user/:id" element={<UserPage />} />
+        <Route path={"/manga/:id/chapters/:idUser"} element={<ChapterPage />} />
       </Routes>
     </>
   );

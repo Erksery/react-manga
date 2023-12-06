@@ -48,6 +48,7 @@ $headerElementHeight: 40px;
 .userOptionsContainer {
   display: flex;
   flex: 1;
+  align-items: center;
   justify-content: flex-end;
   gap: 10px;
 }

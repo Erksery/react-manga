@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useGetActiveManga } from "../../hooks/useGetActiveManga";
 import styles from "./MangaPage.module.scss";
@@ -10,11 +10,65 @@ import {
 } from "@vkontakte/icons";
 import TabsMangaPage from "../../components/TabsMangaPage/TabsMangaPage";
 import InfoMangaPage from "../../components/InfoMangaPage/InfoMangaPage";
+import axios from "axios";
+import { useCookies } from "react-cookie";
+import { useGetUserData } from "../../hooks/useGetUserData";
 
 function MangaPage() {
+  const [activeBookMark, setActiveBookMark] = useState(false);
+  const [cookies] = useCookies(["AuthData"]);
+  const { bookMarks, isLoadingUserData } = useGetUserData();
+  const { id } = useParams();
   const { dataActiveManga, isLoadingActiveData } = useGetActiveManga();
-  const { titleManga, coverImageManga, titleEnglish, rateManga, summaryManga } =
-    dataActiveManga;
+  const {
+    titleManga,
+    coverImageManga,
+    titleEnglish,
+    rateManga,
+    summaryManga,
+    idManga,
+  } = dataActiveManga;
+
+  const handleAddBookMarks = async () => {
+    console.log("bookMark", activeBookMark, bookMarks);
+
+    await axios
+      .post("/api/addBookMarks", {
+        idManga: idManga,
+        idUser: cookies.AuthData.idUser,
+        id: id,
+        image: coverImageManga,
+        title: titleManga,
+      })
+      .then((res) => {
+        setActiveBookMark(true);
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err.response.data.error);
+      });
+  };
+
+  const handleRemoveBookMark = async () => {
+    await axios
+      .post("/api/removeBookMark", {
+        idManga: +id,
+        idUser: +cookies.AuthData.idUser,
+      })
+      .then((res) => {
+        console.log(res);
+        setActiveBookMark(false);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    if (isLoadingUserData) console.log("load");
+    else {
+      const result = bookMarks.find((b) => b.idManga === +id);
+      setActiveBookMark(result != undefined ? true : false);
+    }
+  }, [bookMarks, id, isLoadingActiveData]);
 
   return (
     <>
@@ -43,10 +97,23 @@ function MangaPage() {
                   <Icon28BookSpreadOutline width={25} />
                   Начать читать
                 </button>
-                <button className={styles.buttonAddBookMarks}>
-                  <Icon28AddOutline width={25} />
-                  Добавить в список
-                </button>
+                {!activeBookMark ? (
+                  <button
+                    onClick={handleAddBookMarks}
+                    className={styles.buttonAddBookMarks}
+                  >
+                    <Icon28AddOutline width={25} />
+                    Добавить в список
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleRemoveBookMark}
+                    className={styles.buttonAddBookMarks}
+                  >
+                    <Icon28AddOutline width={25} />
+                    Добаленно
+                  </button>
+                )}
               </div>
               <InfoMangaPage {...dataActiveManga} />
             </div>
@@ -65,7 +132,7 @@ function MangaPage() {
                 </div>
               </div>
               <div className={styles.mangaContent}>
-                <TabsMangaPage str={summaryManga} />
+                <TabsMangaPage id={id} str={summaryManga} />
               </div>
             </div>
           </div>

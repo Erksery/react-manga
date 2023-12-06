@@ -1,0 +1,50 @@
+.userButtonContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userMenu {
+  position: absolute;
+  margin-top: 5px;
+  padding: 10px;
+  top: 70px;
+  right: 0%;
+  border-radius: 10px;
+  background-color: var(--header-background-color);
+  transform: translateY(0%);
+  transition: 0.3s;
+}
+
+.userMenu a {
+  padding: 0;
+}
+
+.userMenu button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  width: 230px;
+}
+
+.userMenu.entering {
+  opacity: 1;
+  transform: translateY(-10%);
+}
+
+.userMenu.entered {
+  opacity: 1;
+  transform: translateY(-10%);
+}
+
+.userMenu.exiting {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.userMenu.exited {
+  visibility: hidden;
+  opacity: 0;
+}

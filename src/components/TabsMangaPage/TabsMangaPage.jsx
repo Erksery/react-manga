@@ -3,14 +3,14 @@ import styles from "./TabsMangaPage.module.scss";
 import Description from "../Description/Description";
 import ChaptersMangaPage from "../ChaptersMangaPage/ChaptersMangaPage";
 
-function TabsMangaPage({ str }) {
+function TabsMangaPage({ str, id }) {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
     { title: "О тайтле", component: <Description str={str} /> },
     {
       title: "Главы",
-      component: <ChaptersMangaPage />,
+      component: <ChaptersMangaPage id={id}/>,
     },
     {
       title: "Комментарии",

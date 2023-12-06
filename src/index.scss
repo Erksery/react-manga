@@ -18,6 +18,8 @@
   --thematic-color: #004a9e;
   --sub-element-background-color: #eeeeee48;
   --name-color: #ffffff;
+  --font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 :root[data-theme="dark"] {
@@ -91,6 +93,7 @@ input {
 input:focus {
   outline: none;
 }
+
 
 ::-webkit-scrollbar {
   width: 9px;
