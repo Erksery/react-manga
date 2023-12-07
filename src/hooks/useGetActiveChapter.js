@@ -5,12 +5,12 @@ import { useParams } from "react-router";
 export const useGetActiveChapter = () => {
   const [activeChapterData, setActiveChapterData] = useState([]);
   const [isLoadingChapterData, setIsLoadingChapterData] = useState(true);
-  const { idManga, idChapter } = useParams();
+  const { id, idChapter } = useParams();
 
   useEffect(() => {
     async function getActiveChapter() {
       const resData = await axios
-        .get(`/api/manga/${idManga}/chapters/${idChapter}`)
+        .get(`/api/manga/${id}/chapters/${idChapter}`)
         .then((res) => setActiveChapterData(res.data))
         .catch((err) => console.log(err))
         .finally(() => setIsLoadingChapterData(false));

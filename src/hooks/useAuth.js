@@ -7,7 +7,6 @@ export const useAuth = () => {
 
   useEffect(() => {
     setIsAuth(cookies.AuthData !== null || undefined ? true : false);
-    console.log(isAuth);
   }, [cookies.AuthData]);
 
   return { isAuth };

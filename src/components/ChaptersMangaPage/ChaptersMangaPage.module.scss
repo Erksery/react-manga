@@ -27,3 +27,9 @@
   padding-bottom: 10px;
   color: var(--color);
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

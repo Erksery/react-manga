@@ -16,9 +16,13 @@ function ChaptersMangaPage() {
   if (isLoadingChaptersData) {
     return <h3>Loading...</h3>;
   }
-  return chaptersData.map((chapter) => (
-    <ChapterComponent key={chapter.idChapter} {...chapter} />
-  ));
+  return (
+    <div className={styles.container}>
+      {chaptersData.map((chapter) => (
+        <ChapterComponent key={chapter.idChapter} {...chapter} />
+      ))}
+    </div>
+  );
 }
 
 export default ChaptersMangaPage;

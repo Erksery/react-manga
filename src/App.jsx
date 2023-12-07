@@ -7,6 +7,8 @@ import AuthPage from "./pages/AuthPage/AuthPage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import UserPage from "./pages/UserPage/UserPage";
 import ChapterPage from "./pages/ChapterPage/ChapterPage";
+import CreateMangaPage from "./pages/CreateMangaPage/CreateMangaPage";
+import CreateChapterPage from "./pages/CreateChapterPage/CreateChapterPage";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -29,11 +31,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/manga/:id" element={<MangaPage />} />
-        <Route path="/manga" element={<MangaPage />} />
         <Route path="/authorization" element={<AuthPage />} />
         <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/user/:id" element={<UserPage />} />
-        <Route path={"/manga/:id/chapters/:idUser"} element={<ChapterPage />} />
+        <Route
+          path={"/manga/:id/chapters/:idChapter"}
+          element={<ChapterPage />}
+        />
+        <Route path="/create" element={<CreateMangaPage />} />
+        <Route
+          path="/manga/:id/createChapter"
+          element={<CreateChapterPage />}
+        />
       </Routes>
     </>
   );

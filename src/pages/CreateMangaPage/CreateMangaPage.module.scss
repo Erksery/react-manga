@@ -1,0 +1,112 @@
+.createForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formButtonContainer button {
+  color: #ffffff;
+  background-color: rgb(64, 153, 255);
+}
+
+.formButtonContainer button:hover {
+  background-color: #0068df;
+}
+
+.createContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.addImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 70px * 2;
+  height: 100px * 2;
+  border: dashed 2px gray;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.addImage:hover label {
+  color: gray;
+  cursor: pointer;
+}
+
+.addImage label {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.addImage img {
+  width: 70px * 1.8;
+  height: 100px * 1.8;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.inputContainer input,
+textarea {
+  padding: 18px;
+  border-radius: 10px;
+  color: gray;
+  border: solid 1px var(--element-background-color);
+  background-color: var(--input-color);
+  transition: 0.3s;
+}
+
+.inputContainer input:hover {
+  border-color: rgb(64, 153, 255);
+}
+.inputContainer input:focus {
+  color: var(--color);
+  border-color: rgb(64, 153, 255);
+}
+
+.infoContainer textarea {
+  max-width: 100%;
+}
+
+.namesContainer {
+  display: flex;
+
+  width: 100%;
+  gap: 15px;
+}
+
+.infoContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.subInfoContainer {
+  display: flex;
+  gap: 15px;
+}
+
+input[type="file"] {
+  display: none;
+}

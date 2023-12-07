@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useGetActiveManga } from "../../hooks/useGetActiveManga";
 import styles from "./MangaPage.module.scss";
 import BaseComponent from "../../components/BaseComponent/BaseComponent";
@@ -7,17 +7,20 @@ import {
   Icon36Favorite,
   Icon28BookSpreadOutline,
   Icon28AddOutline,
+  Icon20Check,
 } from "@vkontakte/icons";
 import TabsMangaPage from "../../components/TabsMangaPage/TabsMangaPage";
 import InfoMangaPage from "../../components/InfoMangaPage/InfoMangaPage";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useGetUserData } from "../../hooks/useGetUserData";
+import { useAuth } from "../../hooks/useAuth";
 
 function MangaPage() {
   const [activeBookMark, setActiveBookMark] = useState(false);
   const [cookies] = useCookies(["AuthData"]);
   const { bookMarks, isLoadingUserData } = useGetUserData();
+  const { isAuth } = useAuth();
   const { id } = useParams();
   const { dataActiveManga, isLoadingActiveData } = useGetActiveManga();
   const {
@@ -30,8 +33,6 @@ function MangaPage() {
   } = dataActiveManga;
 
   const handleAddBookMarks = async () => {
-    console.log("bookMark", activeBookMark, bookMarks);
-
     await axios
       .post("/api/addBookMarks", {
         idManga: idManga,
@@ -89,6 +90,7 @@ function MangaPage() {
                     className={styles.coverImage}
                     src={`http://localhost:5001/image/${coverImageManga}`}
                     alt="..."
+                    loading="lazy"
                   />
                 )}
               </div>
@@ -108,10 +110,10 @@ function MangaPage() {
                 ) : (
                   <button
                     onClick={handleRemoveBookMark}
-                    className={styles.buttonAddBookMarks}
+                    className={styles.buttonAddedBookMarks}
                   >
-                    <Icon28AddOutline width={25} />
-                    Добаленно
+                    <Icon20Check width={25} />
+                    Добавлено
                   </button>
                 )}
               </div>

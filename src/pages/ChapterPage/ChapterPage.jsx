@@ -15,9 +15,11 @@ function ChapterPage() {
   return (
     <BaseComponent>
       <div className={styles.chapterPageContainer}>
-        {arrayChapterImage.map((image) => {
-          console.log(image);
-        })}
+        <div className={styles.imagesContainer}>
+          {arrayChapterImage.map((image) => (
+            <img src={`http://localhost:5001/image/${image}`} />
+          ))}
+        </div>
       </div>
     </BaseComponent>
   );

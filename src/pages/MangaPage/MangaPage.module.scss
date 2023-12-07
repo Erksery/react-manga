@@ -55,6 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 40px;
 }
 
 .buttonRead {
@@ -67,6 +68,12 @@
 }
 
 .buttonAddBookMarks {
+  background-color: var(--element-background-color);
+}
+
+.buttonAddedBookMarks {
+  border: solid 1px rgb(66, 66, 66);
+  color: rgb(127, 255, 155);
   background-color: var(--element-background-color);
 }
 

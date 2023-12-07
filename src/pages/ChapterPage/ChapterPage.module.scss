@@ -1,4 +1,22 @@
-.chapterPageContainer{
-    display: flex;
-    flex-direction: column;
+.chapterPageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagesContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.imagesContainer img {
+  width: 700px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 700px) {
+  .imagesContainer img {
+    width: 100%;
+  }
 }

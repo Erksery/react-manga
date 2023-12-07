@@ -1,0 +1,55 @@
+.createChapterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.groupInput {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 60%;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.inputContainer input {
+  padding: 18px;
+  border-radius: 10px;
+  color: gray;
+  border: solid 1px var(--element-background-color);
+  background-color: var(--input-color);
+  transition: 0.3s;
+}
+
+.formButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formButtonContainer button {
+  color: #ffffff;
+  background-color: rgb(64, 153, 255);
+}
+
+.formButtonContainer button:hover {
+  background-color: #0068df;
+}
+
+.imagesContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.imagesContainer img {
+  width: 70px * 1.8;
+  height: 100px * 1.8;
+  object-fit: cover;
+  border-radius: 10px;
+}

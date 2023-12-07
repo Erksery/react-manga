@@ -4,18 +4,19 @@ import {
   Icon28MoonOutline,
   Icon32SearchOutline,
   Icon36ServicesOutline,
+  Icon28AddOutline,
 } from "@vkontakte/icons";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import SearchHeaderModal from "../SearchHeaderModal/SearchHeaderModal";
 import UserButton from "../UserButton/UserButton";
 import { useCookies } from "react-cookie";
+import { useAuth } from "../../hooks/useAuth";
 
 function Header({ handleToggleTheme, theme }) {
   const [activeSearchModal, setActiveSearchModal] = useState(false);
   const [cookies] = useCookies(["AuthData"]);
-
-  console.log(cookies.AuthData);
+  const { isAuth } = useAuth();
 
   return (
     <div className={styles.headerContainer}>
@@ -45,6 +46,11 @@ function Header({ handleToggleTheme, theme }) {
             <Icon36ServicesOutline width={25} />
             Каталог
           </button>
+          <Link to={"/create"}>
+            <button className={styles.themeButton}>
+              <Icon28AddOutline width={25} />
+            </button>
+          </Link>
           <button onClick={handleToggleTheme} className={styles.themeButton}>
             {theme === "light" ? (
               <Icon28MoonOutline width={25} />

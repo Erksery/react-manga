@@ -9,6 +9,7 @@
 }
 
 :root[data-theme="light"] {
+  --input-color: #f2f2f3;
   --background-color: #f2f2f3;
   --header-background-color: #ffffff;
   --element-background-color: #ffffff;
@@ -23,6 +24,7 @@
 }
 
 :root[data-theme="dark"] {
+  --input-color: #252527;
   --background-color: #0a0a0a;
   --header-background-color: #252527;
   --element-background-color: #1c1c1e;
@@ -94,6 +96,17 @@ input:focus {
   outline: none;
 }
 
+textarea {
+  max-width: 100%;
+  resize: vertical;
+  border: none;
+  font-size: 14px;
+  font-family: var(--font-family);
+}
+
+textarea:focus {
+  outline: none;
+}
 
 ::-webkit-scrollbar {
   width: 9px;

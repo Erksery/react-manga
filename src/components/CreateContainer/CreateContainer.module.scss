@@ -1,0 +1,13 @@
+.createContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  width: 1200px - 20px;
+  border-radius: 20px;
+  color: var(--color);
+  background-color: var(--element-background-color);
+}
+.createContainer h2 {
+  margin-top: 0;
+}
