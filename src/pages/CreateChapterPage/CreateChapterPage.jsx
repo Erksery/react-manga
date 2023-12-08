@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import { useGetManga } from "../../hooks/useGetManga";
 import UploadImage from "../../components/UploadImage/UploadImage";
 import axios from "axios";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 function CreateChapterPage() {
   const [arrayImageChapter, setArrayImageChapter] = useState([]);
@@ -27,9 +28,11 @@ function CreateChapterPage() {
         <div className={styles.createChapterContainer}>
           <div className={styles.imagesContainer}>
             <UploadImage imageUrl={imageUrl} setImageUrl={setImageUrl} />
-            {arrayImageChapter.map((image) => (
-              <img key={image} src={`http://localhost:5001/image/${image}`} />
-            ))}
+            <ScrollContainer className={styles.scrollContainer}>
+              {arrayImageChapter.map((image) => (
+                <img key={image} src={`http://localhost:5001/image/${image}`} />
+              ))}
+            </ScrollContainer>
           </div>
 
           <div className={styles.groupInput}>
@@ -54,6 +57,7 @@ function CreateChapterPage() {
           </div>
           <div>
             <button
+            className={styles.addImageButton}
               type="button"
               onClick={() =>
                 setArrayImageChapter([...arrayImageChapter, imageUrl])

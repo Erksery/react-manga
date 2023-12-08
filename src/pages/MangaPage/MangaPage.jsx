@@ -23,6 +23,7 @@ function MangaPage() {
   const { isAuth } = useAuth();
   const { id } = useParams();
   const { dataActiveManga, isLoadingActiveData } = useGetActiveManga();
+  const { navigate } = useNavigate();
   const {
     titleManga,
     coverImageManga,
@@ -31,6 +32,10 @@ function MangaPage() {
     summaryManga,
     idManga,
   } = dataActiveManga;
+
+  if (isAuth === undefined) {
+    navigate("/");
+  }
 
   const handleAddBookMarks = async () => {
     await axios

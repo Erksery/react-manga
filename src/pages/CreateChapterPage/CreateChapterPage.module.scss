@@ -27,6 +27,10 @@
   transition: 0.3s;
 }
 
+.addImageButton {
+  background-color: var(--sub-element-background-color);
+}
+
 .formButtonContainer {
   display: flex;
   justify-content: flex-end;
@@ -52,4 +56,9 @@
   height: 100px * 1.8;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.scrollContainer {
+  display: flex;
+  gap: 10px;
 }
