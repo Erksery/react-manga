@@ -1,7 +1,10 @@
 .component {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+
   width: 100%;
   padding-top: 20px;
 }

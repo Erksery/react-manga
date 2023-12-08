@@ -5,6 +5,7 @@ import axios from "axios";
 import { useGetManga } from "../../hooks/useGetManga";
 import MangaCard from "../../components/MangaCard/MangaCard";
 import SwiperMangaComponent from "../../components/SwiperMangaComponent/SwiperMangaComponent";
+import MangaChapterAdded from "../../components/MangaChapterAdded/MangaChapterAdded";
 
 function Home() {
   const { dataManga, isLoadingManga } = useGetManga();
@@ -19,6 +20,7 @@ function Home() {
         <div className={styles.baseComponent}>
           <SwiperMangaComponent dataManga={dataManga} />
         </div>
+        <MangaChapterAdded />
       </BaseComponent>
     </>
   );

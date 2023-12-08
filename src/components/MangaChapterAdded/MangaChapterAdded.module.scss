@@ -1,0 +1,11 @@
+.mangaChapterAddedComponent {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  gap: 10px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--element-background-color);
+}
