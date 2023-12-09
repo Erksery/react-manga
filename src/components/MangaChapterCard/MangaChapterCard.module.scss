@@ -1,7 +1,10 @@
 .mangaChapterCard {
+  display: flex;
+  gap: 10px;
   padding: 10px;
   border-radius: 10px;
   background-color: var(--sub-element-background-color);
+  transition: 0.3s;
 }
 
 .mangaChapterCard img {
@@ -9,4 +12,25 @@
   height: 100px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.mangaChapterInfoContaienr {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.mangaChapterInfoContaienr span {
+  color: var(--color);
+  font-weight: 500;
+}
+
+.mangaChapterInfoContaienr p {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--color);
+}
+
+.mangaChapterCard:hover {
+  background-color: var(--button-hover-background-color);
 }

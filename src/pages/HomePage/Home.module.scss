@@ -5,10 +5,23 @@
 
 .baseComponent {
   display: flex;
-  padding: 10px;
-  margin: 0 10px;
-  width: 95%;
-  max-width: 1200px;
+  width: 100%;
   background-color: var(--element-background-color);
   border-radius: 10px;
+}
+
+.contentComponent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1220px;
+  width: 100%;
 }

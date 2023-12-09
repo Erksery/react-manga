@@ -25,7 +25,7 @@ function CreateMangaPage() {
     <CreateContainer title={"Добавить тайтл"}>
       <form onSubmit={onSubmitAddManga} className={styles.createForm}>
         <div className={styles.createContainer}>
-            <UploadImage imageUrl={coverUrl} setImageUrl={setCoverUrl}/>
+          <UploadImage imageUrl={coverUrl} setImageUrl={setCoverUrl} />
           <input type="hidden" name="avatarUrl" value={coverUrl} />
           <div className={styles.inputGroup}>
             <div className={styles.namesContainer}>
