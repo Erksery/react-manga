@@ -1,0 +1,29 @@
+.addImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 100px * 2;
+  border: dashed 2px gray;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.addImage:hover label {
+  color: gray;
+  cursor: pointer;
+}
+
+.addImage label {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.addImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}

@@ -42,10 +42,13 @@ function Header({ handleToggleTheme, theme }) {
         </div>
 
         <div className={styles.userOptionsContainer}>
-          <button className={styles.headerButton}>
-            <Icon36ServicesOutline width={25} />
-            Каталог
-          </button>
+          <Link to={"/catalog"}>
+            <button className={styles.headerButton}>
+              <Icon36ServicesOutline width={25} />
+              Каталог
+            </button>
+          </Link>
+
           <Link to={"/create"}>
             <button className={styles.themeButton}>
               <Icon28AddOutline width={25} />
@@ -61,7 +64,9 @@ function Header({ handleToggleTheme, theme }) {
           {cookies.AuthData ? (
             <UserButton data={cookies.AuthData} />
           ) : (
-            <Link to={"/authorization"}>Войти</Link>
+            <Link className={styles.authLink} to={"/authorization"}>
+              Войти
+            </Link>
           )}
         </div>
       </div>

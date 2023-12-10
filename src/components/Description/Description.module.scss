@@ -1,6 +1,30 @@
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .descriptionContainer p {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  word-wrap: break-word;
+
   -webkit-box-orient: vertical;
   color: var(--color);
+  overflow: hidden;
+}
+
+.genresTagsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genresTagsContainer div {
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--color);
+  background-color: var(--sub-element-background-color);
+  font-size: 14px;
+  font-weight: normal;
 }

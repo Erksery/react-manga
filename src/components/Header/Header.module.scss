@@ -41,7 +41,7 @@ $headerElementHeight: 40px;
 }
 
 .searchButton:hover {
-  border-color: var(--thematic-color);
+  border-color: rgb(64, 153, 255);
   background-color: var(--element-background-color);
 }
 
@@ -68,4 +68,18 @@ $headerElementHeight: 40px;
 
 .authButton {
   background-color: var(--element-background-color);
+}
+
+.authLink {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.authLink:hover {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: var(--button-hover-background-color);
+  transition: 0.3s;
 }

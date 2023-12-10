@@ -6,9 +6,11 @@ import { useQueryCreateManga } from "../../hooks/useQueryCreateManga";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import UploadImage from "../../components/UploadImage/UploadImage";
+import UploadBannerManga from "../../components/UploadBannerManga/UploadBannerManga";
 
 function CreateMangaPage() {
   const [coverUrl, setCoverUrl] = useState("");
+  const [bannerImageUrl, setBannerImageUrl] = useState("");
   const navigate = useNavigate();
 
   const onSubmitAddManga = (event) => {
@@ -116,6 +118,11 @@ function CreateMangaPage() {
             />
           </div>
         </div>
+        <UploadBannerManga
+          bannerImageUrl={bannerImageUrl}
+          setBannerImageUrl={setBannerImageUrl}
+        />
+        <input type="hidden" name="bannerUrl" value={bannerImageUrl} />
         <div className={styles.formButtonContainer}>
           <button type="submit">Загрузить</button>
         </div>

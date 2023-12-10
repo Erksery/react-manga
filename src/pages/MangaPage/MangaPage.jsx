@@ -27,10 +27,13 @@ function MangaPage() {
   const {
     titleManga,
     coverImageManga,
+    bannerImageManga,
     titleEnglish,
     rateManga,
     summaryManga,
     idManga,
+    genresManga,
+    tagsManga,
   } = dataActiveManga;
 
   if (isAuth === undefined) {
@@ -82,8 +85,7 @@ function MangaPage() {
         <div className={styles.mangaPage}>
           <div
             style={{
-              backgroundImage:
-                "url('https://cover.imglib.info/uploads/anime/20545/background/d77470a7-628f-470c-a18d-7df6ab52f844.jpg')",
+              backgroundImage: `url('http://localhost:5001/image/${bannerImageManga}')`,
             }}
             className={styles.mangaBanner}
           />
@@ -139,7 +141,12 @@ function MangaPage() {
                 </div>
               </div>
               <div className={styles.mangaContent}>
-                <TabsMangaPage id={id} str={summaryManga} />
+                <TabsMangaPage
+                  id={id}
+                  str={summaryManga}
+                  genres={genresManga}
+                  tags={tagsManga}
+                />
               </div>
             </div>
           </div>

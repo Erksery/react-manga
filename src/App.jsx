@@ -9,6 +9,7 @@ import UserPage from "./pages/UserPage/UserPage";
 import ChapterPage from "./pages/ChapterPage/ChapterPage";
 import CreateMangaPage from "./pages/CreateMangaPage/CreateMangaPage";
 import CreateChapterPage from "./pages/CreateChapterPage/CreateChapterPage";
+import CatalogPage from "./pages/CatalogPage/CatalogPage";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -43,6 +44,8 @@ function App() {
           path="/manga/:id/createChapter"
           element={<CreateChapterPage />}
         />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/catalog/:tag" element={<CatalogPage />} />
       </Routes>
     </>
   );

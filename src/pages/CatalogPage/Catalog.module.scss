@@ -1,0 +1,17 @@
+.catalogContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1220px;
+  width: 95%;
+}
+
+.catalogContainer h2 {
+  color: var(--color);
+}
+
+.catalogList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
