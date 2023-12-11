@@ -27,12 +27,12 @@ function Description({ str, genres, tags }) {
       </p>
       <div className={styles.genresTagsContainer}>
         {genresList.map((genre, index) => (
-          <Link key={index}>
+          <Link key={index} to={`/catalog/${genre}`}>
             <motion.div whileHover={{ y: -5 }}>{genre}</motion.div>
           </Link>
         ))}
         {tagsList.map((tag, index) => (
-          <Link key={index}>
+          <Link key={index} to={`/catalog/${tag}`}>
             <motion.div whileHover={{ y: -5 }}>{tag}</motion.div>
           </Link>
         ))}

@@ -32,22 +32,6 @@ function CatalogPage() {
             mangaCatalog.map((manga) => (
               <MangaCard key={manga.idManga} {...manga} />
             ))}
-          {!isLoading &&
-            mangaCatalog.map((manga) => (
-              <MangaCard key={manga.idManga} {...manga} />
-            ))}
-          {!isLoading &&
-            mangaCatalog.map((manga) => (
-              <MangaCard key={manga.idManga} {...manga} />
-            ))}
-          {!isLoading &&
-            mangaCatalog.map((manga) => (
-              <MangaCard key={manga.idManga} {...manga} />
-            ))}
-          {!isLoading &&
-            mangaCatalog.map((manga) => (
-              <MangaCard key={manga.idManga} {...manga} />
-            ))}
         </div>
       </div>
     </BaseComponent>

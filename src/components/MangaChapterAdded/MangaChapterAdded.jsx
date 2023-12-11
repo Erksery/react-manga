@@ -12,7 +12,7 @@ function MangaChapterAdded() {
       <span>Новые главы</span>
       {mangaChapterAddedData &&
         mangaChapterAddedData.map((mangaChapter) => (
-          <MangaChapterCard {...mangaChapter} />
+          <MangaChapterCard key={mangaChapter.idManga} {...mangaChapter} />
         ))}
     </div>
   );

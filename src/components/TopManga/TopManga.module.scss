@@ -1,0 +1,25 @@
+.topMangaContainer {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--sub-element-background-color);
+}
+
+.topMangaContainer img {
+  width: 70px * 0.7;
+  height: 100px * 0.7;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.topMangaInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topMangaInfoContainer p {
+  font-size: 14px;
+  color: var(--color);
+}
