@@ -1,0 +1,33 @@
+.favoriteModalTitle {
+  color: var(--color);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.favoriteStarsContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.favoriteStarsContainer div {
+  display: flex;
+  flex: 1;
+}
+
+.rateTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.rateButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.rateButtonContainer button {
+  color: #fff;
+  background-color: var(--thematic-color);
+}

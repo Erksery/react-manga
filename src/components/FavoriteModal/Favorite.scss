@@ -1,0 +1,36 @@
+.favoriteModalContainer {
+  position: fixed;
+  padding: 20px;
+  margin: 20px;
+  left: 50%;
+  top: 250px;
+  width: 100%;
+  max-width: 500px;
+  transform: translate(-50%, -30%);
+  border-radius: 7px;
+  color: var(--color);
+  background-color: var(--background-color);
+  z-index: 999;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.favoriteModalContainer.entering {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.favoriteModalContainer.entered {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.favoriteModalContainer.exiting {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.favoriteModalContainer.exited {
+  visibility: hidden;
+  opacity: 0;
+}

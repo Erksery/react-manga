@@ -15,8 +15,10 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useGetUserData } from "../../hooks/useGetUserData";
 import { useAuth } from "../../hooks/useAuth";
+import FavoriteModal from "../../components/FavoriteModal/FavoriteModal";
 
 function MangaPage() {
+  const [activeFavoriteModal, setActiveFavoriteModal] = useState(false);
   const [activeBookMark, setActiveBookMark] = useState(false);
   const [cookies] = useCookies(["AuthData"]);
   const { bookMarks, isLoadingUserData } = useGetUserData();
@@ -133,11 +135,18 @@ function MangaPage() {
                   <h3>{titleEnglish}</h3>
                 </div>
                 <div>
-                  <div className={styles.favoriteContainer}>
+                  <div
+                    onClick={() => setActiveFavoriteModal(true)}
+                    className={styles.favoriteContainer}
+                  >
                     <Icon36Favorite color="#0068df" width={25} />
                     <h2 style={{ fontSize: 24 }}>{rateManga}.5</h2>
                     <p>(1.8k)</p>
                   </div>
+                  <FavoriteModal
+                    activeFavoriteModal={activeFavoriteModal}
+                    setActiveFavoriteModal={setActiveFavoriteModal}
+                  />
                 </div>
               </div>
               <div className={styles.mangaContent}>

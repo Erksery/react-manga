@@ -27,7 +27,7 @@ function MangaChapterCard({
           "минут",
           "минуту"
         )}`
-      : `${time / 60 / 24} ${getWordForNumber(
+      : `${Math.floor(time / 60 / 24)} ${getWordForNumber(
           time / 60 / 24,
           "день",
           "дня",
