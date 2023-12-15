@@ -8,6 +8,8 @@ import { useCookies } from "react-cookie";
 function AuthPage() {
   const navigate = useNavigate();
   const [cookie, setCookie] = useCookies(["AuthData"]);
+
+  
   const getUserData = async (inputData) => {
     const resData = await axios.get("/api/authorization", {
       params: { email: inputData.email, password: inputData.password },

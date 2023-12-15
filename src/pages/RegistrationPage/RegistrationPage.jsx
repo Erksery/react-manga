@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import styles from "./RegistrationPage.module.scss";
 import BaseComponent from "../../components/BaseComponent/BaseComponent";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function RegistrationPage() {
+  
+  const postUserData = (data) => {
+    axios.post("/api/registration", data).then((res) => console.log(res))
+  }
+
   const submitRegistrationForm = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const field = Object.fromEntries(formData);
     console.log(field);
+
+    postUserData(field)
   };
 
   return (
@@ -26,7 +34,7 @@ function RegistrationPage() {
             </p>
             <div>
               <p>Name</p>
-              <input name="login" type="text" placeholder="Введите логин" />
+              <input name="name" type="text" placeholder="Введите логин" />
             </div>
 
             <div>
