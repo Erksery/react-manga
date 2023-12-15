@@ -15,6 +15,7 @@
   background-color: var(--header-background-color);
   transform: translateY(0%);
   transition: 0.3s;
+  z-index: 9999;
 }
 
 .userMenu a {

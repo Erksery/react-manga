@@ -19,6 +19,8 @@ import FavoriteModal from "../../components/FavoriteModal/FavoriteModal";
 
 function MangaPage() {
   const [activeFavoriteModal, setActiveFavoriteModal] = useState(false);
+  const [ratingsManga, setRatingsManga] = useState([]);
+  const [overallRating, setOverallRating] = useState(0);
   const [activeBookMark, setActiveBookMark] = useState(false);
   const [cookies] = useCookies(["AuthData"]);
   const { bookMarks, isLoadingUserData } = useGetUserData();
@@ -31,16 +33,11 @@ function MangaPage() {
     coverImageManga,
     bannerImageManga,
     titleEnglish,
-    rateManga,
     summaryManga,
     idManga,
     genresManga,
     tagsManga,
   } = dataActiveManga;
-
-  if (isAuth === undefined) {
-    navigate("/");
-  }
 
   const handleAddBookMarks = async () => {
     await axios
@@ -79,6 +76,27 @@ function MangaPage() {
       const result = bookMarks.find((b) => b.idManga === +id);
       setActiveBookMark(result != undefined ? true : false);
     }
+
+    async function getRateManga() {
+      const resData = await axios
+        .get("/api/mangaRating", { params: { idManga: id } })
+        .then((res) => {
+          setRatingsManga(res.data);
+          console.log(res.data);
+        });
+      if (ratingsManga.length !== 0) {
+        const resultRatingManga = (ratingsManga) =>
+          ratingsManga &&
+          ratingsManga.reduce((acc, number) => acc + number.ratingCount, 0) /
+            ratingsManga.length;
+        setOverallRating(resultRatingManga(ratingsManga));
+      } else {
+        setOverallRating(0);
+      }
+
+      return resData;
+    }
+    getRateManga();
   }, [bookMarks, id, isLoadingActiveData]);
 
   return (
@@ -140,10 +158,12 @@ function MangaPage() {
                     className={styles.favoriteContainer}
                   >
                     <Icon36Favorite color="#0068df" width={25} />
-                    <h2 style={{ fontSize: 24 }}>{rateManga}.5</h2>
-                    <p>(1.8k)</p>
+                    <h2 style={{ fontSize: 24 }}>{overallRating.toFixed(1)}</h2>
+                    <p>({ratingsManga.length})</p>
                   </div>
                   <FavoriteModal
+                    idManga={id}
+                    idUser={cookies.AuthData.idUser}
                     activeFavoriteModal={activeFavoriteModal}
                     setActiveFavoriteModal={setActiveFavoriteModal}
                   />

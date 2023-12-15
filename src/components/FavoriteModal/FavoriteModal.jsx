@@ -4,9 +4,24 @@ import "./Favorite.scss";
 import Modal from "../Modal/Modal";
 import { Transition } from "react-transition-group";
 import { Icon36Favorite } from "@vkontakte/icons";
+import axios from "axios";
 
-function FavoriteModal({ activeFavoriteModal, setActiveFavoriteModal }) {
+function FavoriteModal({
+  activeFavoriteModal,
+  setActiveFavoriteModal,
+  idUser,
+  idManga,
+}) {
   const [rateCount, setRateCount] = useState(0);
+
+  const handleAddRatingManga = () => {
+    axios.post("/api/addUserMangaRate", {
+      idUser: idUser,
+      ratingCount: rateCount,
+      idManga: idManga,
+    });
+  };
+
   return (
     <Modal
       activeSearchModal={activeFavoriteModal}
@@ -25,7 +40,7 @@ function FavoriteModal({ activeFavoriteModal, setActiveFavoriteModal }) {
                   <Icon36Favorite
                     style={
                       rateCount <= index
-                        ? { color: "lightgray" }
+                        ? { color: "#6d6d6d56" }
                         : { color: "#0068df" }
                     }
                     width={28}
@@ -33,9 +48,24 @@ function FavoriteModal({ activeFavoriteModal, setActiveFavoriteModal }) {
                 </div>
               ))}
             </div>
-            <p className={styles.rateTitle}>Вы поставвили: {rateCount}</p>
+
             <div className={styles.rateButtonContainer}>
-              <button>Подтердить</button>
+              <p className={styles.rateTitle}>
+                Вы поставили:
+                <span>
+                  <Icon36Favorite style={{ color: "#0068df" }} width={15} />
+                  {rateCount}
+                </span>
+              </p>
+              <button
+                onClick={() => {
+                  handleAddRatingManga();
+                  setActiveFavoriteModal(false);
+                }}
+                disabled={rateCount <= 0}
+              >
+                Подтердить
+              </button>
             </div>
           </div>
         )}

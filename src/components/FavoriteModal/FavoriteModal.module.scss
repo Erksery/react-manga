@@ -7,18 +7,19 @@
 .favoriteStarsContainer {
   display: flex;
   flex-direction: row;
-  margin: 10px 0;
+  margin: 25px 0;
   width: 100%;
 }
 
 .favoriteStarsContainer div {
   display: flex;
   flex: 1;
+  cursor: pointer;
 }
 
 .rateTitle {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
 }
@@ -30,4 +31,19 @@
 .rateButtonContainer button {
   color: #fff;
   background-color: var(--thematic-color);
+}
+
+.rateButtonContainer button:hover {
+  background-color: var(--hover-thematic-color);
+}
+
+.rateTitle {
+  color: var(--color) !important;
+}
+
+.rateTitle span {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 2px;
 }

@@ -17,6 +17,7 @@
   --button-hover-background-color: #e7e7e7;
   --sub-text-color: rgb(212, 212, 212);
   --thematic-color: #0068df;
+  --hover-thematic-color: #004a9e;
   --sub-element-background-color: #eeeeee48;
   --name-color: #ffffff;
   --font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
@@ -32,7 +33,7 @@
   --button-hover-background-color: #313131;
   --sub-text-color: rgb(150, 150, 150);
   --thematic-color: #0068df;
-
+  --hover-thematic-color: #004a9e;
   --sub-element-background-color: #33333367;
   --name-color: #bfbfbf;
   --font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
@@ -85,6 +86,17 @@ button svg {
 
 button:hover {
   background-color: var(--button-hover-background-color);
+}
+
+button:disabled {
+  color: var(--color);
+  background-color: var(--sub-element-background-color);
+  cursor: default;
+}
+
+button:hover:disabled {
+  color: var(--color);
+  background-color: var(--sub-element-background-color);
 }
 
 input {

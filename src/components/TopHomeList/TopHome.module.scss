@@ -1,8 +1,10 @@
 .topHomeListContainer {
   display: flex;
   flex: 1;
+  gap: 10px;
   flex-direction: column;
   padding: 10px;
+  height: 400px;
   border-radius: 10px;
   background-color: var(--element-background-color);
 }
