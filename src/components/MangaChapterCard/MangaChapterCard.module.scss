@@ -14,18 +14,18 @@
   border-radius: 10px;
 }
 
-.mangaChapterInfoContaienr {
+.mangaChapterInfoContainer {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
 
-.mangaChapterInfoContaienr span {
+.mangaChapterInfoContainer span {
   color: var(--color);
   font-weight: 500;
 }
 
-.mangaChapterInfoContaienr p {
+.mangaChapterInfoContainer p {
   font-size: 14px;
   font-weight: normal;
   color: var(--color);

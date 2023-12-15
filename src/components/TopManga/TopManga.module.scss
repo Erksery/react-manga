@@ -4,6 +4,11 @@
   padding: 10px;
   border-radius: 10px;
   background-color: var(--sub-element-background-color);
+  transition: 0.3s;
+}
+
+.topMangaContainer:hover {
+  background-color: var(--button-hover-background-color);
 }
 
 .topMangaContainer img {

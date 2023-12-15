@@ -13,7 +13,7 @@ function MangaChapterCard({
   const temporaryParsing = (time) => {
     return time <= 1440 && time >= 60
       ? `${Math.floor(time / 60)} ${getWordForNumber(
-          time / 60,
+          Math.floor(time / 60),
           "час",
           "часа",
           "часов",
@@ -21,14 +21,14 @@ function MangaChapterCard({
         )}`
       : time <= 60
       ? `${time} ${getWordForNumber(
-          time,
+          Math.floor(time),
           "минута",
           "минуты",
           "минут",
           "минуту"
         )}`
       : `${Math.floor(time / 60 / 24)} ${getWordForNumber(
-          time / 60 / 24,
+          Math.floor(time / 60 / 24),
           "день",
           "дня",
           "дней",
@@ -40,7 +40,7 @@ function MangaChapterCard({
     <Link to={`/manga/${idManga}`}>
       <div className={styles.mangaChapterCard}>
         <img src={`http://localhost:5001/image/${coverImageManga}`} />
-        <div className={styles.mangaChapterInfoContaienr}>
+        <div className={styles.mangaChapterInfoContainer}>
           <div>
             <span>{titleManga}</span>
             <p>Новая глава: {numberChapter}</p>

@@ -8,11 +8,15 @@ function TopHomeList() {
   console.log(dataManga);
 
   return (
-    <div className={styles.topHomeListContainer}>
-      <span>Популярное</span>
-      <div className={styles.topList}>
-        {!isLoadingManga &&
-          dataManga.map((manga) => <TopManga key={manga.idManga} {...manga} />)}
+    <div className={styles.topContainer}>
+      <div className={styles.topHomeListContainer}>
+        <span>Популярное</span>
+        <div className={styles.topList}>
+          {!isLoadingManga &&
+            dataManga.map((manga) => (
+              <TopManga key={manga.idManga} {...manga} />
+            ))}
+        </div>
       </div>
     </div>
   );

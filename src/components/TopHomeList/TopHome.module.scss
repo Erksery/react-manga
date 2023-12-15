@@ -1,11 +1,17 @@
 .topHomeListContainer {
   display: flex;
-  flex: 1;
+  width: 100%;
+  height: 400px;
   gap: 10px;
   flex-direction: column;
   padding: 10px;
   border-radius: 10px;
   background-color: var(--element-background-color);
+}
+
+.topContainer {
+  display: flex;
+  flex: 1;
 }
 
 .topHomeListContainer span {
@@ -18,5 +24,11 @@
 .topList {
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 10px;
+  overflow-y: scroll;
+}
+
+.topList::-webkit-scrollbar {
+  width: 4px;
 }
