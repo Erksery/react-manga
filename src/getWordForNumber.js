@@ -6,7 +6,7 @@ export const getWordForNumber = (time, word1, word2, word3, word4) => {
   } else if (
     (time >= 5 && time <= 20) ||
     (time % 10 >= 5 && time % 10 <= 9) ||
-    time % 10 === 0
+    time % 10 === 0 || time === 20
   ) {
     return word3;
   } else {
