@@ -8,11 +8,14 @@ export const useQueryCreateManga = () => {
     const formData = new FormData();
     formData.append("fileData", file);
 
-    return axios.post("/api/uploadImage", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    return axios
+      .post("/api/uploadImage", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => console.log("Успешно загруженно"))
+      .catch(() => console.log("Ошибка при згрузке"));
   }
 
   return useMutation((newProduct) => createManga(newProduct), {

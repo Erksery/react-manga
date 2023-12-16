@@ -14,6 +14,7 @@ function CreateMangaPage() {
   const navigate = useNavigate();
 
   const onSubmitAddManga = (event) => {
+    event.preventDefault();
     const formData = new FormData(event.target);
     const field = Object.fromEntries(formData);
     console.log(field);

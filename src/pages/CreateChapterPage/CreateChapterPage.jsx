@@ -6,11 +6,13 @@ import { useGetManga } from "../../hooks/useGetManga";
 import UploadImage from "../../components/UploadImage/UploadImage";
 import axios from "axios";
 import ScrollContainer from "react-indiana-drag-scroll";
+import { useNavigate } from "react-router";
 
 function CreateChapterPage() {
   const [arrayImageChapter, setArrayImageChapter] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const onSubmitAddArrayImage = (event) => {
     event.preventDefault();
@@ -19,7 +21,9 @@ function CreateChapterPage() {
     const stringArray = JSON.stringify(arrayImageChapter);
     const obj = { array: stringArray, numberChapter: field.number };
 
-    axios.post(`/api/manga/${id}/createChapters`, obj);
+    axios
+      .post(`/api/manga/${id}/createChapters`, obj)
+      .then(() => navigate("/"));
   };
 
   return (
@@ -57,7 +61,7 @@ function CreateChapterPage() {
           </div>
           <div>
             <button
-            className={styles.addImageButton}
+              className={styles.addImageButton}
               type="button"
               onClick={() =>
                 setArrayImageChapter([...arrayImageChapter, imageUrl])

@@ -9,9 +9,8 @@ function UploadImage({ imageUrl, setImageUrl }) {
   const clearFileName = (file) => {
     const filename = file.name;
     const newFileName = filename.replace(/\.(jpg|png|jpeg)$/i, "");
-    setTimeout(() => {
-      setImageUrl(newFileName);
-    }, 1000);
+
+    setImageUrl(newFileName);
   };
 
   const handleCoverImageChange = (event) => {

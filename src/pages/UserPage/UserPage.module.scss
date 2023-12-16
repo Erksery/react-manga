@@ -14,7 +14,8 @@ $borderRadiusUserLogo: 20px;
   border-radius: 20px;
   background-color: var(--element-background-color);
   object-fit: fill;
-  background-position: center;
+  background-position: 50%;
+  background-size: cover;
   overflow: hidden;
   animation: fadeIn 0.3s ease;
   z-index: -10;
@@ -29,6 +30,11 @@ $borderRadiusUserLogo: 20px;
   left: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    0deg,
+    var(--element-background-color),
+    transparent
+  );
 }
 
 .userInfoContainer {
@@ -66,7 +72,7 @@ $borderRadiusUserLogo: 20px;
 .userImage img {
   width: 100%;
   height: 100%;
-  border-radius: 17px;
+  border-radius: 14px;
   object-fit: cover;
 }
 
